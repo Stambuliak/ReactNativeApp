@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Anakin.ttf",
+      "sha1": "9886d4d0b8fc87ab225c54264cabb62c24e6b78f"
+    },
+    {
+      "path": "assets/fonts/StarJedi.ttf",
+      "sha1": "f872a14458e492a9061fc36a267156ce931bca35"
+    },
+    {
+      "path": "assets/fonts/Xizor.ttf",
+      "sha1": "de4495845006685c7a072961d163a8f9f3ecb2f6"
+    }
+  ]
+}
