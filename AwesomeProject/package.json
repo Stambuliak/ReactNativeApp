@@ -2,16 +2,20 @@
   "name": "awesome_project",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://stambuliak.github.io/ReactNativeApp/",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.16",
+    "gh-pages": "^6.0.0",
     "lottie-react-native": "^6.4.0",
     "react": "17.0.2",
     "react-native": "0.68.2",
