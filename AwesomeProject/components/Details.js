@@ -8,15 +8,18 @@ import {
 } from 'react-native';
 import {FansProvider} from './Context';
 import {useRoute} from '@react-navigation/native';
+import Loader from './Loader';
 
 const Details = () => {
   const route = useRoute();
   const person = route.params?.person;
   const [homeWorld, setHomeWorld] = useState('');
   const [species, setSpecies] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       try {
         const response = await fetch(person.homeworld);
         if (!response.ok) {
@@ -44,6 +47,8 @@ const Details = () => {
         setSpecies(speciesName);
       } catch (error) {
         console.error('An error occurred:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -55,7 +60,41 @@ const Details = () => {
       <ImageBackground
         source={require('../assets/fonts/images/ANAKIN.jpg')}
         style={styles.backgroundImage}>
-        <SafeAreaView style={styles.container}>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <SafeAreaView style={styles.container}>
+            <View style={styles.header}>
+              <Text
+                style={styles.headerText}>{`Star Wars ${person.name}`}</Text>
+            </View>
+            <View style={styles.listWrapper}>
+              <View style={styles.headercell}>
+                <Text style={styles.cell}>{`Person: ${person.name}`}</Text>
+                <Text style={styles.cell}>{`Height: ${person.height}`}</Text>
+                <Text style={styles.cell}>{`Mass: ${person.mass}`}</Text>
+                <Text
+                  style={
+                    styles.cell
+                  }>{`Hair Color: ${person.hair_color}`}</Text>
+                <Text
+                  style={
+                    styles.cell
+                  }>{`Skinn Color: ${person.skin_color}`}</Text>
+                <Text
+                  style={styles.cell}>{`Eye Color: ${person.eye_color}`}</Text>
+                <Text
+                  style={
+                    styles.cell
+                  }>{`Birth Year: ${person.birth_year}`}</Text>
+                <Text style={styles.cell}>{`Gender: ${person.gender}`}</Text>
+                <Text style={styles.cell}>{`HomeWorld: ${homeWorld}`}</Text>
+                <Text style={styles.cell}>{`Species: ${species}`}</Text>
+              </View>
+            </View>
+          </SafeAreaView>
+        )}
+        {/* <SafeAreaView style={styles.container}>
           <View style={styles.header}>
             <Text style={styles.headerText}>{`Star Wars ${person.name}`}</Text>
           </View>
@@ -77,7 +116,7 @@ const Details = () => {
               <Text style={styles.cell}>{`Species: ${species}`}</Text>
             </View>
           </View>
-        </SafeAreaView>
+        </SafeAreaView> */}
       </ImageBackground>
     </FansProvider>
   );

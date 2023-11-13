@@ -4,13 +4,11 @@
   "private": true,
   "homepage": "https://stambuliak.github.io/ReactNativeApp/",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint .",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.9",

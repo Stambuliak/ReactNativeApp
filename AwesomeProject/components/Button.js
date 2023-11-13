@@ -3,11 +3,13 @@ import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 import {useFans} from './Context';
 
 const ButtonClear = () => {
-  const {setFemaleFans, setMaleFans, setOtherFans} = useFans();
+  const {setFemaleFans, setMaleFans, setOtherFans, clearSelectedFans} =
+    useFans();
   const handleClearFans = () => {
     setFemaleFans(0);
     setMaleFans(0);
     setOtherFans(0);
+    clearSelectedFans();
   };
 
   return (
