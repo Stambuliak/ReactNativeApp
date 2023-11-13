@@ -42,6 +42,7 @@ npm install or yarn install
 
 npx react-native run-ios for IOS 
 npx react-native run-android for Android
+```
 
 This will start the React Native development server and launch the app on either the iOS Simulator or an Android emulator(first of all install it in case u dono have it yet).
 
