@@ -24,6 +24,31 @@ This mobile application, built using React Native, is your gateway to a galaxy f
 - **React Native**: A framework for building native mobile applications using React.
 
 - **react-native-vector-icons**: Library for custom icons in React Native.
+## How to Run the Star Wars Fans React Native App
+
+### Prerequisites
+
+- **Node.js**: Make sure you have Node.js installed. You can download it from [nodejs.org](https://nodejs.org/).
+
+- **npm or yarn**: npm is the package manager for Node.js. Yarn is an alternative. Either can be used, and they come with Node.js by default.
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/Stambuliak/ReactNativeApp.git
+cd ReactNativeApp
+
+npm install or yarn install
+
+npx react-native run-ios for IOS 
+npx react-native run-android for Android
+
+This will start the React Native development server and launch the app on either the iOS Simulator or an Android emulator(first of all install it in case u dono have it yet).
+
+Feel free to reach out if you encounter any issues or have further questions. May your React Native development journey be smooth! 🚀📱
+
+
+
 
 ## How to Contribute
 
